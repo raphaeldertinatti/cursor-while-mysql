@@ -70,3 +70,22 @@ The `end` variable starts with 0 and will indicate that the while-loop should ex
 The `variables 1,2,3` in this example, are declared as varchar, but must be declared as the same datatypes from the cursor fields that will be fetched. These variables will receive data from the cursor during the loop with the FETCH statement.
 
 After the normal cursor declaration, we have the `CONTINUE HANDLER` declaration, it will specifies a handler to be executed when the cursor reaches the end of the result set. The handler sets the value of `end` variable to 1, and the loop will stop.
+
+```
+OPEN C;
+WHILE end = 0 DO
+FETCH C INTO variable1, variable2, variable3;
+IF end = 0 THEN	
+UPDATE table2 SET field4 = variable1, field5 = variable2
+WHERE field6 = variable3;
+END IF;
+END WHILE;	
+CLOSE C;
+```
+
+Before the loop starts, we open the cursor with `OPEN C` statement, then whe start the `WHILE` with the condition **end = 0**. Inside the while loop, the cursor data will be fetched into the declared variables, and then the update or insert operation will use the fetched data.
+
+### Conclusion
+
+This is the method that i use in MySQL when i must work with Cursors, as you can see, it is very different for the plsql statements about cursors and loops. 
+
