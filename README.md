@@ -83,7 +83,7 @@ END WHILE;
 CLOSE C;
 ```
 
-Before the loop starts, we open the cursor with `OPEN C` statement, then whe start the `WHILE` with the condition **end = 0**. Inside the while loop, the cursor data will be fetched into the declared variables, and then the update or insert operation will use the fetched data.
+Before the loop starts, we open the cursor with `OPEN C` statement, then we start the `WHILE` with the condition **end = 0**. Inside the while loop, the cursor data will be fetched into the declared variables, and then the update or insert operation will use the fetched data.
 
 ### Conclusion
 
