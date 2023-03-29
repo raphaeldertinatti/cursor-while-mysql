@@ -69,4 +69,4 @@ The `end` variable starts with 0 and will indicate that the while-loop should ex
 
 The `variables 1,2,3` in this example, are declared as varchar, but must be declared as the same datatypes from the cursor fields that will be fetched. These variables will receive data from the cursor during the loop with the FETCH statement.
 
-After the normal cursor declaration, we have the `CONTINUE HANDLER` declaration, it will specifies a handler to be executed when the cursor reaches the end of the result set. The handler sets the value of end variable to 1, and the loop will stop.
+After the normal cursor declaration, we have the `CONTINUE HANDLER` declaration, it will specifies a handler to be executed when the cursor reaches the end of the result set. The handler sets the value of `end` variable to 1, and the loop will stop.
