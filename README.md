@@ -56,3 +56,13 @@ END
 ```
 
 ### Understanding the syntax
+
+```
+DECLARE end int default 0;
+DECLARE variable1, variable2, variable3 varchar(50);
+DECLARE C CURSOR FOR
+SELECT field1, field2, field3 FROM table;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET end = 1;
+```
+
+First you declare the `end` variable that starts with 0 and will indicate that the while-loop should exit when this variable receive 1;
